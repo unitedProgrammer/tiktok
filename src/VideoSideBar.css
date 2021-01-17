@@ -3,3 +3,8 @@
   top: 50%;
   right: 10px;
 }
+.videoSidebar_button {
+  padding: 20px;
+  text-align: center;
+  filter: invert(1);
+}
