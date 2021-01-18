@@ -8,7 +8,14 @@ import Data from "./data.js";
 import Videos from "./dbModel.js";
 
 const app = express();
-const port = 9069;
+const port = process.env.PORT || 9003;
+
+app.use(express.json());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"),
+    res.setHeader("Access-Control-Allow-Headers", "*"),
+    next();
+});
 
 const connection_url =
   "mongodb+srv://admin:HtCHnxsfjJlEFcqA@cluster0.0aq2b.mongodb.net/tiktok?retryWrites=true&w=majority";
@@ -17,13 +24,6 @@ mongoose.connect(connection_url, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
-});
-
-app.use(express.json());
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*"),
-    res.setHeader("Access-Control-Allow-Headers", "*"),
-    next();
 });
 
 app.get("/", (req, res) => res.status(200).send("hello world"));
