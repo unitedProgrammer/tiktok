@@ -8,7 +8,7 @@ import Data from "./data.js";
 import Videos from "./dbModel.js";
 
 const app = express();
-const port = process.env.port || 9000;
+const port = process.env.port || 9002;
 
 const connection_url =
   "mongodb+srv://admin:HtCHnxsfjJlEFcqA@cluster0.0aq2b.mongodb.net/tiktok?retryWrites=true&w=majority";
@@ -21,8 +21,8 @@ mongoose.connect(connection_url, {
 
 app.use(express.json());
 app.use((req, res, next) => {
-  res.setHeader("Acces-Control-Allow-Origin", "*"),
-    res.setHeader("Acces-Control-Allow-Origin", "*"),
+  res.setHeader("Access-Control-Allow-Origin", "*"),
+    res.setHeader("Access-Control-Allow-Headers", "*"),
     next();
 });
 
