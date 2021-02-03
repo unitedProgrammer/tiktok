@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 });
 
 const connection_url =
-  "mongodb+srv://admin:HtCHnxsfjJlEFcqA@cluster0.0aq2b.mongodb.net/tiktok?retryWrites=true&w=majority";
+  "mongodb+srv://admin:mF8bQk1YohEjeYhK@cluster0.0aq2b.mongodb.net/tiktok?retryWrites=true&w=majority";
 
 mongoose.connect(connection_url, {
   useNewUrlParser: true,
@@ -40,6 +40,12 @@ app.get("/v2/posts", (req, res) => {
   });
 });
 
+/*app.post("/v1/posts", async (req, res) => {
+  Videos.update(likes + 1); //создание сообщения с полями nick и message. Можно и newMessage.nick = req.body.nick
+  await Videos.save(); //сохранение
+  res.status(201).send(data); //201 - Entity Created Code. Возвращаем запись из бд с _id
+});
+*/
 app.post("/v2/posts", (req, res) => {
   const dbVideos = req.body;
 
