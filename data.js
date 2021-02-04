@@ -18,7 +18,7 @@ const data = [
     shares: "9949",
   },
   {
-    url: "https://www.tiktok.com/@lisaandlena/video/6924337971793530117",
+    url: "Videos/6911735648202411270.mp4",
     channel: "john",
     description: "love dance",
     song: "u cant take me.wav",
