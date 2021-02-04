@@ -15,6 +15,7 @@ function App() {
     }
     fetchPosts();
   }, []);
+
   return (
     <div className="app">
       <div className="app_videos">
